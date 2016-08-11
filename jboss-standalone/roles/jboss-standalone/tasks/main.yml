@@ -1,17 +1,17 @@
 ---
-- name: Install Java 1.7 and some basic dependencies
-  yum: name={{item}} state=present
-  with_items:
-   - unzip
-   - java-1.7.0-openjdk
-   
 - name: Subscription manager
   redhat_subscription:
     state: present
     username: ralves@redhat.com
     password: "Q!w2E#r4"
     autosubscribe: yes
-    
+
+- name: Install Java 1.7 and some basic dependencies
+  yum: name={{item}} state=present
+  with_items:
+   - unzip
+   - java-1.7.0-openjdk
+      
 - name: Disable Firewall
   service:
     name: firewalld
