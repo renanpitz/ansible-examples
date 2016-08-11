@@ -4,6 +4,28 @@
   with_items:
    - unzip
    - java-1.7.0-openjdk
+   
+- name: Subscription manager
+  redhat_subscription:
+    state: present
+    username: ralves@redhat.com
+    password: "Q!w2E#r4"
+    autosubscribe: yes
+    
+- name: Disable Firewall
+  service:
+    name: firewalld
+    state: stopped
+    
+- name: Install iptables-services
+  yum:
+    name: iptables-services
+    state: latest
+    
+- name: Start and enable iptables-services
+  yum:
+    name: iptables.service
+    state: started
 
 - name: Download JBoss from jboss.org
   get_url: url=http://download.jboss.org/jbossas/7.1/jboss-as-7.1.1.Final/jboss-as-7.1.1.Final.zip dest=/opt/jboss-as-7.1.1.Final.zip
