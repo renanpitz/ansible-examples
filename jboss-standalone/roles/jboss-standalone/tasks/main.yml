@@ -2,8 +2,8 @@
 - name: Subscription manager
   redhat_subscription:
     state: present
-    username: 
-    password: ""
+    username: "{{ login }}"
+    password: "{{ passwd }}"
     autosubscribe: yes
 
 - name: Install Java 1.7 and some basic dependencies
