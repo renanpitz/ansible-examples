@@ -2,7 +2,7 @@
 - name: Subscription manager
   redhat_subscription:
     state: present
-    username: ralves@redhat.com
+    username: 
     password: ""
     autosubscribe: yes
 
