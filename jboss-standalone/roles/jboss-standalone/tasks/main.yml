@@ -3,7 +3,7 @@
   redhat_subscription:
     state: present
     username: ralves@redhat.com
-    password: "Q!w2E#r4"
+    password: ""
     autosubscribe: yes
 
 - name: Install Java 1.7 and some basic dependencies
